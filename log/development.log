@@ -1,0 +1,2177 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20171113204513)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204513"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20171113204630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204630"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20171113212344)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113212344"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 21:24:45.323761"], ["updated_at", "2017-11-13 21:24:45.323761"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Star Wars"], ["director", "J. J. Abrams"], ["rating", 3], ["created_at", "2017-11-13 21:30:15.475033"], ["updated_at", "2017-11-13 21:30:15.475033"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lord of the Rings"], ["director", " Peter Jackson"], ["rating", 1], ["created_at", "2017-11-13 21:30:15.478881"], ["updated_at", "2017-11-13 21:30:15.478881"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dangal"], ["director", "Nitesh Tiwari"], ["rating", 5], ["created_at", "2017-11-13 21:30:15.480928"], ["updated_at", "2017-11-13 21:30:15.480928"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "3 Idiots"], ["director", "Rajkumar Hirani"], ["rating", 5], ["created_at", "2017-11-13 21:30:15.483042"], ["updated_at", "2017-11-13 21:30:15.483042"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gangajal"], ["director", "Praksah Jha"], ["rating", 2], ["created_at", "2017-11-13 21:30:15.485363"], ["updated_at", "2017-11-13 21:30:15.485363"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 21:30:15.499942"], ["updated_at", "2017-11-13 21:30:15.499942"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Star Wars"], ["director", "J. J. Abrams"], ["rating", 3], ["created_at", "2017-11-13 21:32:05.700731"], ["updated_at", "2017-11-13 21:32:05.700731"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lord of the Rings"], ["director", " Peter Jackson"], ["rating", 1], ["created_at", "2017-11-13 21:32:05.703999"], ["updated_at", "2017-11-13 21:32:05.703999"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dangal"], ["director", "Nitesh Tiwari"], ["rating", 5], ["created_at", "2017-11-13 21:32:05.705929"], ["updated_at", "2017-11-13 21:32:05.705929"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "3 Idiots"], ["director", "Rajkumar Hirani"], ["rating", 5], ["created_at", "2017-11-13 21:32:05.707842"], ["updated_at", "2017-11-13 21:32:05.707842"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gangajal"], ["director", "Praksah Jha"], ["rating", 2], ["created_at", "2017-11-13 21:32:05.709683"], ["updated_at", "2017-11-13 21:32:05.709683"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sean Bean"], ["created_at", "2017-11-13 21:32:05.720198"], ["updated_at", "2017-11-13 21:32:05.720198"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Orlando Bloom"], ["created_at", "2017-11-13 21:32:05.722793"], ["updated_at", "2017-11-13 21:32:05.722793"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Carrie Fisher"], ["created_at", "2017-11-13 21:32:05.724916"], ["updated_at", "2017-11-13 21:32:05.724916"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Harrison Ford"], ["created_at", "2017-11-13 21:32:05.726689"], ["updated_at", "2017-11-13 21:32:05.726689"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 21:32:05.728631"], ["updated_at", "2017-11-13 21:32:05.728631"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 21:32:05.730546"], ["updated_at", "2017-11-13 21:32:05.730546"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "actors"[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20171113204513)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204513"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20171113204630)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204630"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20171113212344)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113212344"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 21:33:17.394013"], ["updated_at", "2017-11-13 21:33:17.394013"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Star Wars"], ["director", "J. J. Abrams"], ["rating", 3], ["created_at", "2017-11-13 21:33:22.477796"], ["updated_at", "2017-11-13 21:33:22.477796"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lord of the Rings"], ["director", " Peter Jackson"], ["rating", 1], ["created_at", "2017-11-13 21:33:22.480668"], ["updated_at", "2017-11-13 21:33:22.480668"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dangal"], ["director", "Nitesh Tiwari"], ["rating", 5], ["created_at", "2017-11-13 21:33:22.482564"], ["updated_at", "2017-11-13 21:33:22.482564"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "3 Idiots"], ["director", "Rajkumar Hirani"], ["rating", 5], ["created_at", "2017-11-13 21:33:22.484468"], ["updated_at", "2017-11-13 21:33:22.484468"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gangajal"], ["director", "Praksah Jha"], ["rating", 2], ["created_at", "2017-11-13 21:33:22.486419"], ["updated_at", "2017-11-13 21:33:22.486419"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sean Bean"], ["created_at", "2017-11-13 21:33:22.501298"], ["updated_at", "2017-11-13 21:33:22.501298"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Orlando Bloom"], ["created_at", "2017-11-13 21:33:22.504125"], ["updated_at", "2017-11-13 21:33:22.504125"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Carrie Fisher"], ["created_at", "2017-11-13 21:33:22.506352"], ["updated_at", "2017-11-13 21:33:22.506352"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Harrison Ford"], ["created_at", "2017-11-13 21:33:22.508575"], ["updated_at", "2017-11-13 21:33:22.508575"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 21:33:22.510883"], ["updated_at", "2017-11-13 21:33:22.510883"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 21:33:22.512804"], ["updated_at", "2017-11-13 21:33:22.512804"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "roles"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMovieToRoles (20171113214031)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "actor_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214031"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMovieToRole (20171113214136)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "actor_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMovieToRole (20171113214347)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "roles" ADD "movie_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214347"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActorToRole (20171113214400)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "roles" ADD "actor_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20171113204513)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204513"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20171113204630)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204630"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20171113212344)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113212344"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMovieToRole (20171113214347)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "movie_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214347"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActorToRole (20171113214400)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "actor_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214400"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 21:45:01.238072"], ["updated_at", "2017-11-13 21:45:01.238072"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Baghban"], ["director", "Ravi Chopra"], ["rating", 3], ["created_at", "2017-11-13 21:58:47.290339"], ["updated_at", "2017-11-13 21:58:47.290339"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karan Arjun"], ["director", "Rakesh Roshan"], ["rating", 1], ["created_at", "2017-11-13 21:58:47.293519"], ["updated_at", "2017-11-13 21:58:47.293519"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ishq"], ["director", "Indra Kumar"], ["rating", 5], ["created_at", "2017-11-13 21:58:47.295472"], ["updated_at", "2017-11-13 21:58:47.295472"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Andaz Apna Apna"], ["director", "Rajkumar Santoshi"], ["rating", 5], ["created_at", "2017-11-13 21:58:47.297259"], ["updated_at", "2017-11-13 21:58:47.297259"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thugs of Hindostan"], ["director", "Vijay Krishna Acharya"], ["rating", 2], ["created_at", "2017-11-13 21:58:47.299136"], ["updated_at", "2017-11-13 21:58:47.299136"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mujshe Shadi Karogi"], ["director", "David Dhawan"], ["rating", 2], ["created_at", "2017-11-13 21:58:47.301046"], ["updated_at", "2017-11-13 21:58:47.301046"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Salman Khan"], ["created_at", "2017-11-13 21:58:47.310531"], ["updated_at", "2017-11-13 21:58:47.310531"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amitabh Bacchan"], ["created_at", "2017-11-13 21:58:47.313116"], ["updated_at", "2017-11-13 21:58:47.313116"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shahrukh Khan"], ["created_at", "2017-11-13 21:58:47.315272"], ["updated_at", "2017-11-13 21:58:47.315272"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Akshay Kumar"], ["created_at", "2017-11-13 21:58:47.317292"], ["updated_at", "2017-11-13 21:58:47.317292"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 21:58:47.319254"], ["updated_at", "2017-11-13 21:58:47.319254"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 21:58:47.321222"], ["updated_at", "2017-11-13 21:58:47.321222"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "roles"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "movies"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "movie_id" integer, "actor_id" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "movies"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "movie_id" integer, "actor_id" integer)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171113214400)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171113214347),
+(20171113212344),
+(20171113204513),
+(20171113204630);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 22:00:26.639963"], ["updated_at", "2017-11-13 22:00:26.639963"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Baghban"], ["director", "Ravi Chopra"], ["rating", 3], ["created_at", "2017-11-13 22:00:26.661679"], ["updated_at", "2017-11-13 22:00:26.661679"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karan Arjun"], ["director", "Rakesh Roshan"], ["rating", 1], ["created_at", "2017-11-13 22:00:26.664341"], ["updated_at", "2017-11-13 22:00:26.664341"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ishq"], ["director", "Indra Kumar"], ["rating", 5], ["created_at", "2017-11-13 22:00:26.666615"], ["updated_at", "2017-11-13 22:00:26.666615"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Andaz Apna Apna"], ["director", "Rajkumar Santoshi"], ["rating", 5], ["created_at", "2017-11-13 22:00:26.668747"], ["updated_at", "2017-11-13 22:00:26.668747"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thugs of Hindostan"], ["director", "Vijay Krishna Acharya"], ["rating", 2], ["created_at", "2017-11-13 22:00:26.670885"], ["updated_at", "2017-11-13 22:00:26.670885"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mujshe Shadi Karogi"], ["director", "David Dhawan"], ["rating", 2], ["created_at", "2017-11-13 22:00:26.672989"], ["updated_at", "2017-11-13 22:00:26.672989"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Salman Khan"], ["created_at", "2017-11-13 22:00:26.684772"], ["updated_at", "2017-11-13 22:00:26.684772"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amitabh Bacchan"], ["created_at", "2017-11-13 22:00:26.687418"], ["updated_at", "2017-11-13 22:00:26.687418"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shahrukh Khan"], ["created_at", "2017-11-13 22:00:26.691626"], ["updated_at", "2017-11-13 22:00:26.691626"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Akshay Kumar"], ["created_at", "2017-11-13 22:00:26.693938"], ["updated_at", "2017-11-13 22:00:26.693938"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 22:00:26.699649"], ["updated_at", "2017-11-13 22:00:26.699649"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 22:00:26.702192"], ["updated_at", "2017-11-13 22:00:26.702192"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Baghban"], ["director", "Ravi Chopra"], ["rating", 3], ["created_at", "2017-11-13 22:00:33.975916"], ["updated_at", "2017-11-13 22:00:33.975916"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karan Arjun"], ["director", "Rakesh Roshan"], ["rating", 1], ["created_at", "2017-11-13 22:00:33.983108"], ["updated_at", "2017-11-13 22:00:33.983108"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ishq"], ["director", "Indra Kumar"], ["rating", 5], ["created_at", "2017-11-13 22:00:33.987034"], ["updated_at", "2017-11-13 22:00:33.987034"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Andaz Apna Apna"], ["director", "Rajkumar Santoshi"], ["rating", 5], ["created_at", "2017-11-13 22:00:33.990949"], ["updated_at", "2017-11-13 22:00:33.990949"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thugs of Hindostan"], ["director", "Vijay Krishna Acharya"], ["rating", 2], ["created_at", "2017-11-13 22:00:33.994144"], ["updated_at", "2017-11-13 22:00:33.994144"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mujshe Shadi Karogi"], ["director", "David Dhawan"], ["rating", 2], ["created_at", "2017-11-13 22:00:33.997001"], ["updated_at", "2017-11-13 22:00:33.997001"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Salman Khan"], ["created_at", "2017-11-13 22:00:34.007346"], ["updated_at", "2017-11-13 22:00:34.007346"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amitabh Bacchan"], ["created_at", "2017-11-13 22:00:34.011089"], ["updated_at", "2017-11-13 22:00:34.011089"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shahrukh Khan"], ["created_at", "2017-11-13 22:00:34.013279"], ["updated_at", "2017-11-13 22:00:34.013279"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Akshay Kumar"], ["created_at", "2017-11-13 22:00:34.016944"], ["updated_at", "2017-11-13 22:00:34.016944"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 22:00:34.019869"], ["updated_at", "2017-11-13 22:00:34.019869"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 22:00:34.023032"], ["updated_at", "2017-11-13 22:00:34.023032"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "roles"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20171113204513)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204513"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20171113204630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204630"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20171113212344)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113212344"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMovieToRole (20171113214347)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "movie_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214347"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActorToRole (20171113214400)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "actor_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214400"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 22:01:06.157025"], ["updated_at", "2017-11-13 22:01:06.157025"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "movies"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "movie_id" integer, "actor_id" integer)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "movies"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "movie_id" integer, "actor_id" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171113214400)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171113214347),
+(20171113212344),
+(20171113204513),
+(20171113204630);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 22:01:10.064856"], ["updated_at", "2017-11-13 22:01:10.064856"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Baghban"], ["director", "Ravi Chopra"], ["rating", 3], ["created_at", "2017-11-13 22:01:10.098038"], ["updated_at", "2017-11-13 22:01:10.098038"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karan Arjun"], ["director", "Rakesh Roshan"], ["rating", 1], ["created_at", "2017-11-13 22:01:10.100909"], ["updated_at", "2017-11-13 22:01:10.100909"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ishq"], ["director", "Indra Kumar"], ["rating", 5], ["created_at", "2017-11-13 22:01:10.103190"], ["updated_at", "2017-11-13 22:01:10.103190"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Andaz Apna Apna"], ["director", "Rajkumar Santoshi"], ["rating", 5], ["created_at", "2017-11-13 22:01:10.106206"], ["updated_at", "2017-11-13 22:01:10.106206"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thugs of Hindostan"], ["director", "Vijay Krishna Acharya"], ["rating", 2], ["created_at", "2017-11-13 22:01:10.108969"], ["updated_at", "2017-11-13 22:01:10.108969"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mujshe Shadi Karogi"], ["director", "David Dhawan"], ["rating", 2], ["created_at", "2017-11-13 22:01:10.111583"], ["updated_at", "2017-11-13 22:01:10.111583"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Salman Khan"], ["created_at", "2017-11-13 22:01:10.129480"], ["updated_at", "2017-11-13 22:01:10.129480"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amitabh Bacchan"], ["created_at", "2017-11-13 22:01:10.132411"], ["updated_at", "2017-11-13 22:01:10.132411"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shahrukh Khan"], ["created_at", "2017-11-13 22:01:10.134695"], ["updated_at", "2017-11-13 22:01:10.134695"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Akshay Kumar"], ["created_at", "2017-11-13 22:01:10.136985"], ["updated_at", "2017-11-13 22:01:10.136985"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 22:01:10.139390"], ["updated_at", "2017-11-13 22:01:10.139390"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 22:01:10.141741"], ["updated_at", "2017-11-13 22:01:10.141741"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "roles"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20171113204513)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "director" varchar, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204513"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20171113204630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113204630"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20171113212344)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113212344"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMovieToRole (20171113214347)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "movie_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214347"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActorToRole (20171113214400)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "roles" ADD "actor_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_actor_id" ON "roles" ("actor_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113214400"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 22:02:31.819044"], ["updated_at", "2017-11-13 22:02:31.819044"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_actor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Baghban"], ["director", "Ravi Chopra"], ["rating", 3], ["created_at", "2017-11-13 22:02:46.534939"], ["updated_at", "2017-11-13 22:02:46.534939"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karan Arjun"], ["director", "Rakesh Roshan"], ["rating", 1], ["created_at", "2017-11-13 22:02:46.540405"], ["updated_at", "2017-11-13 22:02:46.540405"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ishq"], ["director", "Indra Kumar"], ["rating", 5], ["created_at", "2017-11-13 22:02:46.543921"], ["updated_at", "2017-11-13 22:02:46.543921"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Andaz Apna Apna"], ["director", "Rajkumar Santoshi"], ["rating", 5], ["created_at", "2017-11-13 22:02:46.547090"], ["updated_at", "2017-11-13 22:02:46.547090"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thugs of Hindostan"], ["director", "Vijay Krishna Acharya"], ["rating", 2], ["created_at", "2017-11-13 22:02:46.558049"], ["updated_at", "2017-11-13 22:02:46.558049"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mujshe Shadi Karogi"], ["director", "David Dhawan"], ["rating", 2], ["created_at", "2017-11-13 22:02:46.560615"], ["updated_at", "2017-11-13 22:02:46.560615"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Salman Khan"], ["created_at", "2017-11-13 22:02:46.570760"], ["updated_at", "2017-11-13 22:02:46.570760"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amitabh Bacchan"], ["created_at", "2017-11-13 22:02:46.573311"], ["updated_at", "2017-11-13 22:02:46.573311"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shahrukh Khan"], ["created_at", "2017-11-13 22:02:46.575458"], ["updated_at", "2017-11-13 22:02:46.575458"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Akshay Kumar"], ["created_at", "2017-11-13 22:02:46.577442"], ["updated_at", "2017-11-13 22:02:46.577442"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Amir Khan"], ["created_at", "2017-11-13 22:02:46.580471"], ["updated_at", "2017-11-13 22:02:46.580471"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ajay Devgn"], ["created_at", "2017-11-13 22:02:46.583788"], ["updated_at", "2017-11-13 22:02:46.583788"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.607568"], ["updated_at", "2017-11-13 22:02:46.607568"], ["movie_id", 1], ["actor_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.612995"], ["updated_at", "2017-11-13 22:02:46.612995"], ["movie_id", 1], ["actor_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.616844"], ["updated_at", "2017-11-13 22:02:46.616844"], ["movie_id", 2], ["actor_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.620742"], ["updated_at", "2017-11-13 22:02:46.620742"], ["movie_id", 2], ["actor_id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.624446"], ["updated_at", "2017-11-13 22:02:46.624446"], ["movie_id", 3], ["actor_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.627886"], ["updated_at", "2017-11-13 22:02:46.627886"], ["movie_id", 3], ["actor_id", 6]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.631774"], ["updated_at", "2017-11-13 22:02:46.631774"], ["movie_id", 4], ["actor_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.635971"], ["updated_at", "2017-11-13 22:02:46.635971"], ["movie_id", 4], ["actor_id", 5]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.639515"], ["updated_at", "2017-11-13 22:02:46.639515"], ["movie_id", 5], ["actor_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.643075"], ["updated_at", "2017-11-13 22:02:46.643075"], ["movie_id", 5], ["actor_id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.646888"], ["updated_at", "2017-11-13 22:02:46.646888"], ["movie_id", 6], ["actor_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "roles" ("created_at", "updated_at", "movie_id", "actor_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-11-13 22:02:46.654276"], ["updated_at", "2017-11-13 22:02:46.654276"], ["movie_id", 6], ["actor_id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "roles"[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" ORDER BY "roles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" ORDER BY "roles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" ORDER BY "roles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ? LIMIT ?[0m  [["actor_id", 1], ["LIMIT", 11]]
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" ORDER BY "actors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ? LIMIT ?[0m  [["actor_id", 1], ["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:08:23 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template application/hello with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ravikumar/practice/toyapp/app/views"
+):
+  
+app/controllers/application_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:08:35 +0100
+  
+SyntaxError (/Users/ravikumar/practice/toyapp/app/controllers/application_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+  	render: 'hello'
+  	       ^):
+  
+app/controllers/application_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:09:03 +0100
+  
+SyntaxError (/Users/ravikumar/practice/toyapp/app/controllers/application_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+  	render: :nothing
+  	       ^):
+  
+app/controllers/application_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:09:52 +0100
+Processing by ApplicationController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:10:03 +0100
+  
+SyntaxError (/Users/ravikumar/practice/toyapp/app/controllers/application_controller.rb:6: syntax error, unexpected keyword_end
+  end
+     ^):
+  
+app/controllers/application_controller.rb:6: syntax error, unexpected keyword_end
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:10:09 +0100
+Processing by ApplicationController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:10:41 +0100
+Processing by ApplicationController#index as HTML
+Completed 406 Not Acceptable in 29ms
+
+
+  
+ActionController::UnknownFormat (ApplicationController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:16:35 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 363ms (Views: 351.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:18:24 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-13 23:21:37 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&commit=Search" for 127.0.0.1 at 2017-11-14 08:24:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:26:51 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:3: syntax error, unexpected ..., expecting ')'
+ity_id, options_for_select(...)) );@output_buffer.safe_appen
+                              ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:5: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/home/index.html.erb:3: syntax error, unexpected ..., expecting ')'
+app/views/home/index.html.erb:5: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/home/index.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:32:37 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:4: syntax error, unexpected ..., expecting ']'
+isbon', 1], ['Madrid', 2], ...]) );@output_buffer.safe_appen
+                              ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/home/index.html.erb:4: syntax error, unexpected ..., expecting ']'
+app/views/home/index.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/home/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:34:11 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:5: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/ravikumar/practice/toyapp/app/views/home/index.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/home/index.html.erb:5: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/home/index.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:34:57 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:40:26 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:40:57 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:41:58 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:50:32 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 20.7ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&rating_id=2&commit=Search" for 127.0.0.1 at 2017-11-14 08:50:34 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"utf8"=>"✓", "rating_id"=>"2", "commit"=>"Search"}
+Completed 406 Not Acceptable in 21336ms
+
+
+  
+ActionController::UnknownFormat (HomeController#search is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/search?utf8=%E2%9C%93&rating_id=2&commit=Search" for 127.0.0.1 at 2017-11-14 08:51:39 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"utf8"=>"✓", "rating_id"=>"2", "commit"=>"Search"}
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:51:46 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 21.1ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&rating_id=1&commit=Search" for 127.0.0.1 at 2017-11-14 08:51:49 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"utf8"=>"✓", "rating_id"=>"1", "commit"=>"Search"}
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:53:10 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 20.9ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&rating_id=1&commit=Search" for 127.0.0.1 at 2017-11-14 08:53:12 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"utf8"=>"✓", "rating_id"=>"1", "commit"=>"Search"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 08:59:58 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 21.7ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&rating_id=1&commit=Search" for 127.0.0.1 at 2017-11-14 09:00:00 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"utf8"=>"✓", "rating_id"=>"1", "commit"=>"Search"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:01:35 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 20.6ms)
+
+
+Started GET "/search?rating_id=2&commit=Search" for 127.0.0.1 at 2017-11-14 09:01:37 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating_id"=>"2", "commit"=>"Search"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:02:50 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 20.9ms)
+
+
+Started GET "/search?rating_id=1" for 127.0.0.1 at 2017-11-14 09:02:53 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:04:35 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 20.3ms)
+
+
+Started GET "/search?rating=3" for 127.0.0.1 at 2017-11-14 09:04:38 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"3"}
+Completed 406 Not Acceptable in 38765ms
+
+
+  
+ActionController::UnknownFormat (HomeController#search is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:12:52 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 199ms (Views: 185.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=1" for 127.0.0.1 at 2017-11-14 09:12:55 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"1"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (rating >= '1')[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (rating >= 3)[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (rating >= '3')[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (rating >= '5')[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (rating >= 5)[0m
+Completed 406 Not Acceptable in 49780ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionController::UnknownFormat (HomeController#search is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:15:01 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 17.3ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:15:03 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (rating >= '4')[0m
+Completed 200 OK in 16ms (Views: 8.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:15:24 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 16.2ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:15:28 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-11-14 09:16:38 +0100
+Processing by HomeController#search as HTML
+Completed 400 Bad Request in 4ms
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: rating):
+  
+app/controllers/home_controller.rb:14:in `search_params'
+app/controllers/home_controller.rb:7:in `search'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:16:44 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 23.3ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:16:48 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '4')[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:17:59 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 19.5ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:18:01 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 23.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:18:43 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '4')[0m
+  Rendered home/search.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-11-14 09:20:42 +0100
+Processing by HomeController#search as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: rating):
+  
+app/controllers/home_controller.rb:13:in `search_params'
+app/controllers/home_controller.rb:7:in `search'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:20:45 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=5" for 127.0.0.1 at 2017-11-14 09:20:47 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"5"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '5')[0m
+  Rendered home/search.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search?rating=5" for 127.0.0.1 at 2017-11-14 09:21:07 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"5"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '5')[0m
+  Rendered home/search.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-11-14 09:21:09 +0100
+Processing by HomeController#search as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: rating):
+  
+app/controllers/home_controller.rb:13:in `search_params'
+app/controllers/home_controller.rb:7:in `search'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:22:07 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 207ms (Views: 195.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:22:11 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '4')[0m
+  Rendered home/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 21.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:23:00 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:23:02 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '4')[0m
+  Rendered home/search.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:23:59 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=5" for 127.0.0.1 at 2017-11-14 09:24:02 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"5"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '5')[0m
+  Rendered home/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:24:03 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=3" for 127.0.0.1 at 2017-11-14 09:24:11 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"3"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '3')[0m
+  Rendered home/search.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search?rating=3" for 127.0.0.1 at 2017-11-14 09:24:44 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"3"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '3')[0m
+  Rendered home/search.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 41ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:24:49 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=1" for 127.0.0.1 at 2017-11-14 09:24:52 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"1"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '1')[0m
+  Rendered home/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:25:00 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=2" for 127.0.0.1 at 2017-11-14 09:25:02 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"2"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '2')[0m
+  Rendered home/search.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:25:07 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=3" for 127.0.0.1 at 2017-11-14 09:25:11 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"3"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '3')[0m
+  Rendered home/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:25:12 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:25:15 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '4')[0m
+  Rendered home/search.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:25:17 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=5" for 127.0.0.1 at 2017-11-14 09:25:20 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"5"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '5')[0m
+  Rendered home/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:25:27 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:29:24 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 16.7ms)
+
+
+Started GET "/search?actor=Shahrukh+Khan" for 127.0.0.1 at 2017-11-14 09:29:30 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Shahrukh Khan"}
+Completed 500 Internal Server Error in 231731ms (ActiveRecord: 0.4ms)
+
+
+  
+TypeError (can't quote ActionController::Parameters):
+  
+app/controllers/home_controller.rb:8:in `search'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:33:41 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 200ms (Views: 187.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Amir+Khan" for 127.0.0.1 at 2017-11-14 09:34:00 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Amir Khan"}
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `pluck' for nil:NilClass):
+    1: <%= @movies.pluck(:name) %><br>
+    2: <%= link_to 'Back to Search', root_url %>
+  
+app/views/home/search.html.erb:1:in `_app_views_home_search_html_erb___4252949426475169363_70285260996640'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:34:28 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 27.0ms)
+
+
+Started GET "/search?actor=Amitabh+Bacchan" for 127.0.0.1 at 2017-11-14 09:34:42 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Amitabh Bacchan"}
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 58882ms
+
+
+  
+ActionView::Template::Error (undefined method `pluck' for nil:NilClass):
+    1: <%= @movies.pluck(:name) %><br>
+    2: <%= link_to 'Back to Search', root_url %>
+  
+app/views/home/search.html.erb:1:in `_app_views_home_search_html_erb___4252949426475169363_70285269207280'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:37:24 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 21.0ms)
+
+
+Started GET "/search?actor=Akshay+Kumar" for 127.0.0.1 at 2017-11-14 09:37:27 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Akshay Kumar"}
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Akshay Kumar"], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Akshay Kumar"], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 4]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Akshay Kumar"], ["LIMIT", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 4]]
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 106277ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `pluck' for nil:NilClass):
+    1: <%= @movies.pluck(:name) %><br>
+    2: <%= link_to 'Back to Search', root_url %>
+  
+app/views/home/search.html.erb:1:in `_app_views_home_search_html_erb___4252949426475169363_70285269763620'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:00 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 184ms (Views: 172.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Salman+Khan" for 127.0.0.1 at 2017-11-14 09:40:05 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Salman Khan"}
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Salman Khan"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered home/search.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 81ms (Views: 32.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:09 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Akshay+Kumar" for 127.0.0.1 at 2017-11-14 09:40:11 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Akshay Kumar"}
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Akshay Kumar"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 4]]
+  Rendered home/search.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:12 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Ajay+Devgn" for 127.0.0.1 at 2017-11-14 09:40:16 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Ajay Devgn"}
+  [1m[36mActor Load (3.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Ajay Devgn"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 6]]
+  Rendered home/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:17 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?rating=4" for 127.0.0.1 at 2017-11-14 09:40:20 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"4"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (can't quote ActionController::Parameters):
+  
+app/controllers/home_controller.rb:10:in `search'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:45 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 20.8ms)
+
+
+Started GET "/search?rating=3" for 127.0.0.1 at 2017-11-14 09:40:48 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"rating"=>"3"}
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= '3')[0m
+  Rendered home/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 19.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:50 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Ajay+Devgn" for 127.0.0.1 at 2017-11-14 09:40:52 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Ajay Devgn"}
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Ajay Devgn"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 6]]
+  Rendered home/search.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 44ms (Views: 20.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:40:56 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:42:39 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Hash into String):
+    1: <%= form_tag(URI.encode "/search", method: "get", enforce_utf8: false) do %>
+    2:   <%= label_tag(:q, "Search for Movies:") %>
+    3:   <%= select_tag(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), { include_blank: 'Select the rating' }) %>
+    4:   <%= submit_tag "Search", name: nil %>
+  
+app/views/home/index.html.erb:1:in `_app_views_home_index_html_erb___1897781879043542550_70121658277220'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:43:52 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    1: <%= form_tag(u "/search", method: "get", enforce_utf8: false) do %>
+    2:   <%= label_tag(:q, "Search for Movies:") %>
+    3:   <%= select_tag(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), { include_blank: 'Select the rating' }) %>
+    4:   <%= submit_tag "Search", name: nil %>
+  
+app/views/home/index.html.erb:1:in `_app_views_home_index_html_erb___1897781879043542550_70121658294880'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:44:15 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 240ms (Views: 236.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/%2Fsearch?rating=4" for 127.0.0.1 at 2017-11-14 09:44:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/%2Fsearch"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:47:32 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Salman+Khan" for 127.0.0.1 at 2017-11-14 09:47:39 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Salman Khan"}
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Salman Khan"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered home/search.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 116ms (Views: 37.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-11-14 09:47:53 +0100
+Processing by HomeController#search as HTML
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" WHERE (rating >= NULL)[0m
+  Rendered home/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:47:57 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Salman+Khan" for 127.0.0.1 at 2017-11-14 09:48:00 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Salman Khan"}
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Salman Khan"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered home/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:48:25 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Amitabh+Bacchan" for 127.0.0.1 at 2017-11-14 09:48:41 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Amitabh Bacchan"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Amitabh Bacchan"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered home/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:50:23 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 223ms (Views: 211.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?actor=Akshay+Kumar" for 127.0.0.1 at 2017-11-14 09:50:31 +0100
+Processing by HomeController#search as HTML
+  Parameters: {"actor"=>"Akshay Kumar"}
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."name" = ? LIMIT ?[0m  [["name", "Akshay Kumar"], ["LIMIT", 1]]
+  Rendering home/search.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "movies"."name" FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."actor_id" = ?[0m  [["actor_id", 4]]
+  Rendered home/search.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 83ms (Views: 40.2ms | ActiveRecord: 3.1ms)
+
+

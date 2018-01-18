@@ -1,0 +1,10 @@
+<%= form_tag("/search", method: "get", enforce_utf8: false) do %>
+  <%= label_tag(:q, "Search for Movies:") %>
+  <%= select_tag(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), { include_blank: 'Select the rating' }) %>
+  <%= submit_tag "Search", name: nil %>
+<% end %><br>
+<%= form_tag("/search", method: "get", enforce_utf8: false) do %>
+  <%= label_tag(:q, "Search for Movies:") %>
+  <%= select_tag(:actor, options_for_select([['Salman Khan', 'Salman Khan'], ['Amitabh Bacchan', 'Amitabh Bacchan'], ['Shahrukh Khan', 'Shahrukh Khan'], ['Akshay Kumar', 'Akshay Kumar'], ['Amir Khan', 'Amir Khan'], ['Ajay Devgn', 'Ajay Devgn']]), { include_blank: 'Select the actor' }) %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
